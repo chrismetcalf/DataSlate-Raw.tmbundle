@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/bin/sh
+
+echo "Publishing to $SOCRATA_DOMAIN…" 
+curl --silent --netrc --header "X-App-Token: DwXVHWfd4JbhqWOONsb6S96gr" -X POST --data @"$TM_FILEPATH" --header "Content-type: application/json" --insecure https://$SOCRATA_DOMAIN/id/pages.json
+echo "Done!"</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@b</string>
+	<key>name</key>
+	<string>Publish Current File</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>uuid</key>
+	<string>DA8768E4-8ED8-4E8D-8AD4-A33D258A5181</string>
+</dict>
+</plist>
